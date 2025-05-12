@@ -92,6 +92,8 @@ Asegúrate de estar dentro del entorno virtual antes de ejecutar estos comandos:
 ```bash
 pip install flask setuptools wheel
 pip install flask-cors
+pip install python-decouple
+pip install python-dotenv
 ```
 
 ### Dependencias Adicionales
