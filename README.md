@@ -18,6 +18,10 @@ Vende-Fácil es una aplicación desarrollada para facilitar la conexión entre v
 ## Descripción del Proyecto
 Vende-Fácil maneja distintos tipos de usuarios (clientes y vendedores), así como el registro de productos con sus características específicas (tipo, tamaño, precio, disponibilidad). También permite realizar ventas y compras, y relacionarlas con los productos comercializados.
 
+## Proyecto educativo
+
+Este proyecto es exclusivamente para fines de aprendizaje y corresponde a un proyecto de estudios del programa Tecnólogo en Análisis y Desarrollo de Software del SENA. No debe ser utilizado en producción ni para fines comerciales.
+
 ## Tecnologías Utilizadas
 ### Backend
 - Python (Flask)
