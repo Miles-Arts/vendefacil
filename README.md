@@ -141,9 +141,12 @@ Este proyecto utiliza la metodología **Kanban** para la gestión y organizació
 
 ## Arquitectura del Proyecto
 El proyecto utiliza una arquitectura MVC (Modelo-Vista-Controlador):
-- **Modelo (Model):** Lógica de datos y conexión a la base de datos (`src/conexion_postgresql.py`, `setup_database.sql`).
-- **Vista (View):** Interfaz de usuario en la carpeta `templates/` (archivos HTML).
-- **Controlador (Controller):** Lógica de la aplicación y rutas en `app.py`.
+
+- El **Modelo (Model)** gestiona la lógica de datos y la conexión a la base de datos (por ejemplo, archivos como `src/conexion_postgresql.py`).
+- La **Vista (View)** corresponde a la interfaz de usuario, ubicada en la carpeta `templates/` con archivos HTML.
+- El **Controlador (Controller)** maneja la lógica de la aplicación y las rutas, como en `app.py`.
+
+Esta arquitectura permite separar responsabilidades, facilitando el mantenimiento y la escalabilidad del proyecto.
 
 ## Versión del Proyecto
 Actualmente en la versión **0.0.1** (etapa temprana de desarrollo). Se sigue el esquema de versionado semántico.
