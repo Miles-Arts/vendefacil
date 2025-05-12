@@ -109,10 +109,10 @@ pip install psycopg2-binary
 ```
 
 ## Inicialización del Proyecto
-1. Asegúrate de estar en la carpeta `app`.
+1. Asegúrate de estar en la carpeta raíz del proyecto.
 2. Ejecuta el siguiente comando para iniciar el servidor Flask:
    ```bash
-   py ./app/app.py
+   py ./src/utils/app.py
    ```
 3. Abre tu navegador y visita [http://127.0.0.1:5000](http://127.0.0.1:5000) para verificar que el servidor esté corriendo.
 
