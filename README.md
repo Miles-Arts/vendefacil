@@ -100,6 +100,11 @@ pip install python-decouple
 pip install python-dotenv
 ```
 
+> **Nota:** Para retornar respuestas en formato JSON en tus rutas, debes importar `jsonify` desde Flask:
+> ```python
+> from flask import jsonify
+> ```
+
 ### Dependencias Adicionales
 Para conectar la aplicación con PostgreSQL:
 ```bash
