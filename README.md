@@ -18,6 +18,10 @@ Vende-Fácil es una aplicación desarrollada para facilitar la conexión entre v
 ## Descripción del Proyecto
 Vende-Fácil maneja distintos tipos de usuarios (clientes y vendedores), así como el registro de productos con sus características específicas (tipo, tamaño, precio, disponibilidad). También permite realizar ventas y compras, y relacionarlas con los productos comercializados.
 
+## Proyecto educativo
+
+Este proyecto es exclusivamente para fines de aprendizaje y corresponde a un proyecto de estudios del programa Tecnólogo en Análisis y Desarrollo de Software del SENA. No debe ser utilizado en producción ni para fines comerciales.
+
 ## Tecnologías Utilizadas
 ### Backend
 - Python (Flask)
@@ -91,6 +95,9 @@ Vende-Fácil maneja distintos tipos de usuarios (clientes y vendedores), así co
 Asegúrate de estar dentro del entorno virtual antes de ejecutar estos comandos:
 ```bash
 pip install flask setuptools wheel
+pip install flask-cors
+pip install python-decouple
+pip install python-dotenv
 ```
 
 ### Dependencias Adicionales
@@ -102,10 +109,10 @@ pip install psycopg2-binary
 ```
 
 ## Inicialización del Proyecto
-1. Asegúrate de estar en la carpeta `app`.
+1. Asegúrate de estar en la carpeta raíz del proyecto.
 2. Ejecuta el siguiente comando para iniciar el servidor Flask:
    ```bash
-   py ./app/app.py
+   py ./src/utils/app.py
    ```
 3. Abre tu navegador y visita [http://127.0.0.1:5000](http://127.0.0.1:5000) para verificar que el servidor esté corriendo.
 
@@ -138,9 +145,12 @@ Este proyecto utiliza la metodología **Kanban** para la gestión y organizació
 
 ## Arquitectura del Proyecto
 El proyecto utiliza una arquitectura MVC (Modelo-Vista-Controlador):
-- **Modelo (Model):** Lógica de datos y conexión a la base de datos (`src/conexion_postgresql.py`, `setup_database.sql`).
-- **Vista (View):** Interfaz de usuario en la carpeta `templates/` (archivos HTML).
-- **Controlador (Controller):** Lógica de la aplicación y rutas en `app.py`.
+
+- El **Modelo (Model)** gestiona la lógica de datos y la conexión a la base de datos (por ejemplo, archivos como `src/conexion_postgresql.py`).
+- La **Vista (View)** corresponde a la interfaz de usuario, ubicada en la carpeta `templates/` con archivos HTML.
+- El **Controlador (Controller)** maneja la lógica de la aplicación y las rutas, como en `app.py`.
+
+Esta arquitectura permite separar responsabilidades, facilitando el mantenimiento y la escalabilidad del proyecto.
 
 ## Versión del Proyecto
 Actualmente en la versión **0.0.1** (etapa temprana de desarrollo). Se sigue el esquema de versionado semántico.
