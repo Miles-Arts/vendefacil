@@ -91,6 +91,7 @@ Vende-Fácil maneja distintos tipos de usuarios (clientes y vendedores), así co
 Asegúrate de estar dentro del entorno virtual antes de ejecutar estos comandos:
 ```bash
 pip install flask setuptools wheel
+pip install flask-cors
 ```
 
 ### Dependencias Adicionales
