@@ -62,20 +62,20 @@ Vende-Fácil maneja distintos tipos de usuarios (clientes y vendedores), así co
    ```
 2. Crea un entorno virtual con Python 3:
    ```bash
-   python -m virtualenv env
+   python -m virtualenv venv
    ```
 3. Activa el entorno virtual:
    - En Windows (Git Bash):
      ```bash
-     source env/Scripts/activate
+     source venv/Scripts/activate
      ```
    - En Windows (PowerShell o CMD):
      ```bash
-     .\env\Scripts\activate
+     .\venv\Scripts\activate
      ```
    - En Linux/Mac:
      ```bash
-     source env/bin/activate
+     source venv/bin/activate
      ```
 4. Verifica si el entorno virtual está activo:
    - En Bash:
