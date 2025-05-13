@@ -6,3 +6,4 @@ main=Blueprint('productos_blueprint',__name__)
 @main.route('/')
 def get_productos():
     return jsonify({'message': "Vende_Productos"})
+
