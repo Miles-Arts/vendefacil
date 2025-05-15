@@ -1,3 +1,5 @@
+from utils.DateFormat import  DateFormat
+
 class Productos():
     
     def __init__(self,id_producto,categoria_producto=None,id_compra=None,caracteristicas_producto=None,tipo_producto=None,tamano_producto=None,precio_producto=None,mes_del_producto=None,nombre_producto=None) -> None:
@@ -21,6 +23,6 @@ class Productos():
             'tipo_producto':self.tipo_producto,
             'tamano_producto':self.tamano_producto,
             'precio_producto':self.precio_producto,
-            'mes_del_producto':self.mes_del_producto,
+            'mes_del_producto':DateFormat.convert_date(self.mes_del_producto),
             'nombre_producto':self.nombre_producto
         }   
