@@ -62,8 +62,33 @@ def add_producto():
             return jsonify({'message':"Error al agregar producto"}),500
     
     except Exception as ex:
-        import traceback
+
         return jsonify({'message': str(ex)}), 500
+    
+@main.route('/update/<id_producto>',methods=['PUT'])    
+def update_producto(id_producto):
+    
+    try:
+        categoria_producto=request.json['categoria_producto']
+        id_compra=int(request.json['id_compra'])
+        caracteristicas_producto=request.json['caracteristicas_producto']
+        tipo_producto=request.json['tipo_producto']
+        tamano_producto=int(request.json['tamano_producto'])
+        precio_producto=float(request.json['precio_producto'])
+        mes_del_producto=request.json['mes_del_producto']
+        nombre_producto=request.json['nombre_producto']
+        
+        producto=Productos(id_producto,categoria_producto,id_compra,caracteristicas_producto,tipo_producto,tamano_producto,precio_producto,mes_del_producto,nombre_producto)
+        
+        affected_rows=  ProductosModel.update_producto(producto)
+        
+        if affected_rows == 1:
+            return jsonify(producto.id_producto)
+        else:
+            return jsonify({'message':"Producto no actualizado"}),404
+    except Exception as ex:
+        return jsonify({'message': str(ex)}), 500        
+    
     
 @main.route('/delete/<id_producto>',methods=['DELETE'])    
 def delete_producto(id_producto):
@@ -76,7 +101,7 @@ def delete_producto(id_producto):
         if affected_rows == 1:
             return jsonify(producto.id_producto)
         else:
-            return jsonify({'message':"Película no Eliminada"}),404
+            return jsonify({'message':"Producto no Eliminado"}),404
     
     except Exception as ex:
         return jsonify({'message': str(ex)}), 500    
