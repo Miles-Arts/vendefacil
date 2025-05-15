@@ -55,11 +55,11 @@ def add_producto():
         producto=Productos(str(id),categoria_producto,id_compra,caracteristicas_producto,tipo_producto,tamano_producto,precio_producto,mes_del_producto,nombre_producto)
         
         affected_rows=  ProductosModel.add_producto(producto)
-        print('affected_rows:', affected_rows)
+        #print('affected_rows:', affected_rows)
         if affected_rows == 1:
             return jsonify(producto.id_producto)
         else:
-            raise Exception(f"Error al agregar Producto. affected_rows={affected_rows}")
+            return jsonify({'message':"Error al agregar producto"}),500
     
     except Exception as ex:
         import traceback
