@@ -60,5 +60,22 @@ class ProductosModel():
             return affected_rows     
                 
         except Exception as ex:
-            return Exception(ex)          
+            return Exception(ex)    
         
+              
+    @classmethod
+    def delete_producto(self,producto):
+        try:
+            connection=get_connection()
+            
+            with connection.cursor() as cursor:
+                cursor.execute("DELETE FROM productos WHERE id_producto = %s",(producto.id_producto,)) 
+                
+                affected_rows=cursor.rowcount
+                connection.commit()
+                    
+            connection.close()
+            return affected_rows     
+                
+        except Exception as ex:
+            return Exception(ex)              

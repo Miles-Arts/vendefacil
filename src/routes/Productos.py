@@ -64,3 +64,19 @@ def add_producto():
     except Exception as ex:
         import traceback
         return jsonify({'message': str(ex)}), 500
+    
+@main.route('/delete/<id_producto>',methods=['DELETE'])    
+def delete_producto(id_producto):
+    
+    try:
+        producto=Productos(id_producto)
+        
+        affected_rows=ProductosModel.delete_producto(producto)
+       
+        if affected_rows == 1:
+            return jsonify(producto.id_producto)
+        else:
+            return jsonify({'message':"Película no Eliminada"}),404
+    
+    except Exception as ex:
+        return jsonify({'message': str(ex)}), 500    
