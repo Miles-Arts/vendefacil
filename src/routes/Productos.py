@@ -53,7 +53,7 @@ def add_producto():
         mes_del_producto=request.json['mes_del_producto']
         nombre_producto=request.json['nombre_producto']
         
-        producto=Productos("",categoria_producto,id_compra,caracteristicas_producto,tipo_producto,tamano_producto,precio_producto,mes_del_producto,nombre_producto)
+        producto=Productos(uuid.uuid4,categoria_producto,id_compra,caracteristicas_producto,tipo_producto,tamano_producto,precio_producto,mes_del_producto,nombre_producto)
         
         return jsonify({})
         
