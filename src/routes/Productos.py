@@ -42,7 +42,6 @@ def add_producto():
     
     try:
         #Validar datos correcto y que no sean entregados vacios o erroneos en el campo requerido
-        #id_producto=request.json['id_producto']
         categoria_producto=request.json['categoria_producto']
         id_compra=int(request.json['id_compra'])
         caracteristicas_producto=request.json['caracteristicas_producto']
@@ -53,15 +52,15 @@ def add_producto():
         nombre_producto=request.json['nombre_producto']
         
         id=uuid.uuid4()
-        #print(id)
         producto=Productos(str(id),categoria_producto,id_compra,caracteristicas_producto,tipo_producto,tamano_producto,precio_producto,mes_del_producto,nombre_producto)
         
         affected_rows=  ProductosModel.add_producto(producto)
-        
+        print('affected_rows:', affected_rows)
         if affected_rows == 1:
             return jsonify(producto.id_producto)
         else:
-            return jsonify({'massage': "Error al agregar Producto"}), 500 
-        
+            raise Exception(f"Error al agregar Producto. affected_rows={affected_rows}")
+    
     except Exception as ex:
-        return jsonify({'massage': str(ex)}), 500     
+        import traceback
+        return jsonify({'message': str(ex)}), 500
