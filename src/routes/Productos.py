@@ -53,9 +53,15 @@ def add_producto():
         mes_del_producto=request.json['mes_del_producto']
         nombre_producto=request.json['nombre_producto']
         
-        producto=Productos(uuid.uuid4,categoria_producto,id_compra,caracteristicas_producto,tipo_producto,tamano_producto,precio_producto,mes_del_producto,nombre_producto)
+        id=uuid.uuid4
+        producto=Productos(id,categoria_producto,id_compra,caracteristicas_producto,tipo_producto,tamano_producto,precio_producto,mes_del_producto,nombre_producto)
         
-        return jsonify({})
+        affecte_rows=  ProductosModel.add_producto(producto)
+        
+        if affecte_rows == 1:
+            return jsonify(producto.id)
+        else:
+            return jsonify({'massage': "Error al agregar Producto"}), 500 
         
     except Exception as ex:
         return jsonify({'massage': str(ex)}), 500     
