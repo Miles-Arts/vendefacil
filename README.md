@@ -159,6 +159,15 @@ Para verificar la conexión, ejecuta:
 python src/conexion_postgresql.py
 ```
 
+## Importar request de Flask
+
+Para manejar datos enviados en peticiones HTTP (por ejemplo, para recibir datos en rutas POST), debes importar el objeto `request` de Flask:
+
+```python
+from flask import request
+```
+
+Esto te permite acceder a los datos enviados por el cliente usando `request.json`, `request.form`, etc.
 
 ## Formateo de Fechas en Python
 

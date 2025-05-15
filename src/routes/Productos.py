@@ -1,5 +1,6 @@
 from flask import Blueprint
 from flask import jsonify
+from flask import request
 
 #productos
 from models.ProductosModel import ProductosModel
@@ -31,3 +32,13 @@ def get_producto(id_producto):
         
     except Exception as ex:
         return jsonify({'massage': str(ex)}), 500 
+    
+@main.route('/add',methods=['POST'])    
+def add_producto():
+    
+    try:
+        print(request.json)
+        return 
+        
+    except Exception as ex:
+        return jsonify({'massage': str(ex)}), 500     
