@@ -42,5 +42,23 @@ class ProductosModel():
             return producto       
                 
         except Exception as ex:
-            return Exception(ex)        
+            return Exception(ex)    
+        
+    @classmethod
+    def add_producto(self,producto):
+        try:
+            connection=get_connection()
+            
+            with connection.cursor() as cursor:
+                cursor.execute("""INSERT INTO productos (id_producto,categoria_producto,id_compra,caracteristicas_producto,tipo_producto,tamano_producto,precio_producto,mes_del_producto,nombre_producto) 
+                               VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,)""",(producto.id_producto,producto.categoria_producto,producto.id_compra,producto.caracteristicas_producto,producto.tipo_producto,producto.tamano_producto,producto.precio_producto,producto.mes_del_producto,producto.nombre_producto)) 
+                
+                affected_rows=cursor.rowcount
+                connection.commit()
+                    
+            connection.close()
+            return affected_rows     
+                
+        except Exception as ex:
+            return Exception(ex)          
         

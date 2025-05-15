@@ -159,6 +159,27 @@ Para verificar la conexión, ejecuta:
 python src/conexion_postgresql.py
 ```
 
+## Importar request de Flask
+
+Para manejar datos enviados en peticiones HTTP (por ejemplo, para recibir datos en rutas POST), debes importar el objeto `request` de Flask:
+
+```python
+from flask import request
+```
+
+Esto te permite acceder a los datos enviados por el cliente usando `request.json`, `request.form`, etc.
+
+## Importar uuid en Python (versión uuid4)
+
+Para generar identificadores únicos (UUID) en tu aplicación, debes importar el módulo `uuid` de Python y usar la versión uuid4:
+
+```python
+import uuid
+
+nuevo_id = str(uuid.uuid4())  # Genera un UUID versión 4
+```
+
+Esto es útil para crear claves primarias únicas o identificadores para tus registros.
 
 ## Formateo de Fechas en Python
 
