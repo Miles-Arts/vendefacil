@@ -78,7 +78,15 @@ def update_producto(id_producto):
         mes_del_producto=request.json['mes_del_producto']
         nombre_producto=request.json['nombre_producto']
         
-        producto=Productos(id_producto,categoria_producto,id_compra,caracteristicas_producto,tipo_producto,tamano_producto,precio_producto,mes_del_producto,nombre_producto)
+        producto=Productos(id_producto,
+                           categoria_producto,
+                           id_compra,
+                           caracteristicas_producto,
+                           tipo_producto,
+                           tamano_producto,
+                           precio_producto,
+                           mes_del_producto,
+                           nombre_producto)
         
         affected_rows=  ProductosModel.update_producto(producto)
         
