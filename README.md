@@ -159,6 +159,21 @@ Para verificar la conexión, ejecuta:
 python src/conexion_postgresql.py
 ```
 
+
+## Formateo de Fechas en Python
+
+Para organizar y manipular fechas solo en números (por ejemplo, YYYY-MM-DD), puedes usar el módulo `datetime` de Python. Ejemplo de uso:
+
+```python
+import datetime
+
+fecha_actual = datetime.datetime.now()
+fecha_formateada = fecha_actual.strftime('%Y-%m-%d')
+print(fecha_formateada)  # Salida: 2025-05-14
+```
+
+Esto es útil para guardar fechas en bases de datos o mostrar fechas en un formato estándar.
+
 ## Configuración de variables de entorno
 
 Antes de ejecutar la aplicación, debes crear una carpeta llamada `.env` en la raíz del proyecto. Dentro de esta carpeta, crea un archivo para definir las variables de entorno necesarias para la conexión a la base de datos y la seguridad de la aplicación. Ejemplo de variables que debes agregar:
