@@ -1,6 +1,10 @@
 from flask import Blueprint
 from flask import jsonify
 from flask import request
+import uuid
+
+#Entities
+from models.entities.Productos import Productos
 
 #productos
 from models.ProductosModel import ProductosModel
@@ -37,8 +41,21 @@ def get_producto(id_producto):
 def add_producto():
     
     try:
-        print(request.json)
-        return 
+        #Validar datos correcto y que no sean entregados vacios o erroneos en el campo requerido
+        
+        id_producto=request.json['id_producto']
+        categoria_producto=request.json['categoria_producto']
+        id_compra=int(request.json['id_compra'])
+        caracteristicas_producto=request.json['caracteristicas_producto']
+        tipo_producto=request.json['tipo_producto']
+        tamano_producto=int(request.json['tamano_producto'])
+        precio_producto=float(request.json['precio_producto'])
+        mes_del_producto=request.json['mes_del_producto']
+        nombre_producto=request.json['nombre_producto']
+        
+        producto=Productos("",categoria_producto,id_compra,caracteristicas_producto,tipo_producto,tamano_producto,precio_producto,mes_del_producto,nombre_producto)
+        
+        return jsonify({})
         
     except Exception as ex:
         return jsonify({'massage': str(ex)}), 500     

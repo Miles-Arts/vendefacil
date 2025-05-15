@@ -169,6 +169,16 @@ from flask import request
 
 Esto te permite acceder a los datos enviados por el cliente usando `request.json`, `request.form`, etc.
 
+## Importar uuid en Python
+
+Para generar identificadores únicos (UUID) en tu aplicación, debes importar el módulo `uuid` de Python:
+
+```python
+import uuid
+```
+
+Esto es útil para crear claves primarias únicas o identificadores para tus registros.
+
 ## Formateo de Fechas en Python
 
 Para organizar y manipular fechas solo en números (por ejemplo, YYYY-MM-DD), puedes usar el módulo `datetime` de Python. Ejemplo de uso:
