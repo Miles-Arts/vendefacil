@@ -8,6 +8,7 @@ Vende-Fácil es una aplicación desarrollada para facilitar la conexión entre v
 - [Instalación y Configuración](#instalación-y-configuración)
 - [Inicialización del Proyecto](#inicialización-del-proyecto)
 - [Conexión a la Base de Datos PostgreSQL](#conexión-a-la-base-de-datos-postgresql)
+- [Configuración de variables de entorno](#configuración-de-variables-de-entorno)
 - [Solución a Errores Comunes](#solución-a-errores-comunes)
 - [Metodología de Trabajo](#metodología-de-trabajo)
 - [Arquitectura del Proyecto](#arquitectura-del-proyecto)
@@ -158,6 +159,7 @@ Para verificar la conexión, ejecuta:
 python src/conexion_postgresql.py
 ```
 
+
 ## Formateo de Fechas en Python
 
 Para organizar y manipular fechas solo en números (por ejemplo, YYYY-MM-DD), puedes usar el módulo `datetime` de Python. Ejemplo de uso:
@@ -171,6 +173,20 @@ print(fecha_formateada)  # Salida: 2025-05-14
 ```
 
 Esto es útil para guardar fechas en bases de datos o mostrar fechas en un formato estándar.
+
+## Configuración de variables de entorno
+
+Antes de ejecutar la aplicación, debes crear una carpeta llamada `.env` en la raíz del proyecto. Dentro de esta carpeta, crea un archivo para definir las variables de entorno necesarias para la conexión a la base de datos y la seguridad de la aplicación. Ejemplo de variables que debes agregar:
+
+```
+SECRET_KEY=tu_clave_secreta
+PGSQL_HOST=localhost
+PGSQL_USER=postgres
+PGSQL_PASSWORD=tu_contraseña
+PGSQL_DATABASE=VendeFacil
+```
+
+Asegúrate de no compartir este archivo ni sus datos sensibles en repositorios públicos.
 
 ## Solución a Errores Comunes
 - Verifica las rutas en el navegador.
@@ -187,7 +203,7 @@ El proyecto utiliza una arquitectura MVC (Modelo-Vista-Controlador):
 
 - El **Modelo (Model)** gestiona la lógica de datos y la conexión a la base de datos (por ejemplo, archivos como `src/conexion_postgresql.py`).
 - La **Vista (View)** corresponde a la interfaz de usuario, ubicada en la carpeta `templates/` con archivos HTML.
-- El **Controlador (Controller)** maneja la lógica de la aplicación y las rutas, como en `app.py`.
+- La **Controlador (Controller)** maneja la lógica de la aplicación y las rutas, como en `app.py`.
 
 Esta arquitectura permite separar responsabilidades, facilitando el mantenimiento y la escalabilidad del proyecto.
 
