@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 
 import sys
 import os
@@ -10,6 +11,10 @@ from config import config
 from routes import Productos
 
 app=Flask(__name__)
+
+#http://localhost:9300 el numero de puerto depende de lenguaje para front
+CORS(app,resources={"*":{"origins":"http://localhost:9300"}})
+
 
 def page_not_found(error):
     return "<h1>Página no encontrada</h1>",404

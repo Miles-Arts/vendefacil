@@ -134,6 +134,23 @@ pip install psycopg2
 pip install psycopg2-binary
 ```
 
+### Generar el archivo requirements.txt
+
+Para mantener un registro de las dependencias del proyecto, puedes generar o actualizar el archivo `requirements.txt` utilizando el siguiente comando:
+
+```bash
+pip freeze > requirements.txt
+```
+
+#### ¿Qué es `requirements.txt`?
+Este archivo contiene una lista de todas las dependencias instaladas en el entorno virtual del proyecto. Es útil para compartir el proyecto con otros desarrolladores o para implementarlo en un servidor, ya que permite instalar las mismas dependencias ejecutando:
+
+```bash
+pip install -r requirements.txt
+```
+
+Asegúrate de ejecutar este comando dentro del entorno virtual activado para capturar únicamente las dependencias relevantes del proyecto.
+
 ## Inicialización del Proyecto
 1. Asegúrate de estar en la carpeta raíz del proyecto.
 2. Ejecuta el siguiente comando para iniciar el servidor Flask:
